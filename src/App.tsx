@@ -46,10 +46,10 @@ function App() {
   const [lineThickness, setLineThickness] = useState(0.05);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleRender = () => {
+  const handleRender = (codeToRender?: string) => {
     try {
       const parser = new PRGParser();
-      const parsed = parser.parse(code);
+      const parsed = parser.parse(codeToRender ?? code);
 
       const renderer = new SVGRenderer();
       const svgOutput = renderer.render(parsed, {
@@ -123,7 +123,7 @@ function App() {
               <button className="render-button secondary" onClick={handleSavePRG}>
                 Save PRG
               </button>
-              <button className="render-button" onClick={handleRender}>
+              <button className="render-button" onClick={() => handleRender()}>
                 Render
               </button>
               <input
@@ -212,7 +212,7 @@ function App() {
         </div>
 
         <div className="chat-panel">
-          <AIChat currentCode={code} onCodeUpdate={setCode} />
+          <AIChat currentCode={code} onCodeUpdate={setCode} onRender={handleRender} />
         </div>
       </div>
     </div>

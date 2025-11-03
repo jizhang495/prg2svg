@@ -9,9 +9,10 @@ interface Message {
 interface AIChatProps {
   currentCode: string;
   onCodeUpdate: (newCode: string) => void;
+  onRender: (code?: string) => void;
 }
 
-export function AIChat({ currentCode, onCodeUpdate }: AIChatProps) {
+export function AIChat({ currentCode, onCodeUpdate, onRender }: AIChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -80,6 +81,8 @@ export function AIChat({ currentCode, onCodeUpdate }: AIChatProps) {
       const extractedCode = extractCodeFromResponse(data.response);
       if (extractedCode) {
         onCodeUpdate(extractedCode);
+        // Automatically render with the new code
+        onRender(extractedCode);
       }
     } catch (error: any) {
       console.error('Chat error:', error);

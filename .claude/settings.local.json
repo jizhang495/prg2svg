@@ -8,7 +8,9 @@
       "Bash(chmod:*)",
       "Bash(./stop.sh:*)",
       "Bash(dos2unix:*)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(npm run build:*)",
+      "Bash(pgrep:*)"
     ],
     "deny": [],
     "ask": []
