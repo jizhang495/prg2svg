@@ -48,6 +48,7 @@ body {
   flex-direction: column;
   border-right: 2px solid #e2e8f0;
   background: #f8fafc;
+  min-height: 0;
 }
 
 .panel-header {
@@ -102,18 +103,21 @@ body {
 .editor-wrapper {
   flex: 1;
   overflow: hidden;
+  min-height: 0;
 }
 
 .viewer-panel {
   display: flex;
   flex-direction: column;
   background: white;
+  min-height: 0;
 }
 
 .chat-panel {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-height: 0;
 }
 
 .svg-viewer {
@@ -124,6 +128,7 @@ body {
   padding: 2rem;
   overflow: auto;
   background: #ffffff;
+  min-height: 0;
 }
 
 .svg-viewer svg {

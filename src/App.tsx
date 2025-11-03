@@ -112,11 +112,6 @@ function App() {
 
   return (
     <div className="app">
-      <header className="header">
-        <h1>PRG to SVG Viewer</h1>
-        <p>Visualize aerosol jet printing program files</p>
-      </header>
-
       <div className="container">
         <div className="editor-panel">
           <div className="panel-header">
